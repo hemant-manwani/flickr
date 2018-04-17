@@ -1,0 +1,23 @@
+<%= render 'header' %>
+
+<div class="container">
+  <h1 class="page-header">Search Flickr Photo</h1>
+  <%= render 'form' %>
+  <br />
+
+  <div class="row">
+    <% @results.each do |photo, index| %>
+        <div class="col-xs-6 col-md-3">
+          <div class="img-box">
+            <img src="<%= @service.build_img_url(photo) %>" class="img-responsive">
+          </div>
+        </div>
+    <% end if @results%>
+  </div>
+
+  <% if @results.present? && @results.any? %>
+    <div class="paginate-box">
+    <%= will_paginate @results, renderer: BootstrapPagination::Rails %>
+    </div>
+  <% end %>
+</div>

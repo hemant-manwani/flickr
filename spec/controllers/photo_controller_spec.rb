@@ -8,8 +8,17 @@ describe PhotoController, :type => :controller do
     end
 
     it "should return zero items for a rubbish search" do
-      get :index, params: { search_input: "hjghghgh545454455" }
+      get :index, params: { search_input: "hjgh@77876776*454455" }
       expect(assigns(:results).length).to eq(0)
+    end
+
+    it "should return zero items for a flickr_base_url is not present" do
+      base_url = ENV['flickr_base_url']
+      ENV['flickr_base_url'] = ''
+      get :index, params: { search_input: "cats" }
+      expect(assigns(:results)).to be_nil
+      expect(flash[:error_msg]).to be_present
+      ENV['flickr_base_url'] = base_url
     end
 
     it "should contain different results on page 2" do

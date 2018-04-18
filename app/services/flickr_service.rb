@@ -9,7 +9,7 @@ class FlickrService
   def search
     url = "#{ @base_path }&text=#{ @text }&format=json&nojsoncallback=1"
     response = Typhoeus.get(url)
-    JSON.parse(response.body)
+    JSON.parse(response.body) rescue {}
   end
 
   def build_img_url(photo)

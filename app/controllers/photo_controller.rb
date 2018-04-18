@@ -6,7 +6,7 @@ class PhotoController < ApplicationController
       @service = FlickrService.new(params)
       results = @service.search
       return @results = results['photos']['photo'].paginate(page: params[:page], per_page: ENV['results_per_page']) if results['photos'].present?
-      flash.now[:error_msg] = results['message']
+      flash.now[:error_msg] = results['message'] || "Something went wrong.."
     end
   end
 end

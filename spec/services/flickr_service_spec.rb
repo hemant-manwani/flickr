@@ -31,6 +31,14 @@ describe FlickrService do
       response['stat'].equal?('fail')
       ENV['flickr_api_key'] = key
     end
+    it "should not return search data when flickr_base_url is not present" do
+      base_url = ENV['flickr_base_url']
+      ENV['flickr_base_url'] = ''
+      service = FlickrService.new({search_input: 'test'})
+      response = service.search
+      expect(response.blank?).to be_truthy
+      ENV['flickr_base_url'] = base_url
+    end
   end
 
   describe "when generates a image url" do

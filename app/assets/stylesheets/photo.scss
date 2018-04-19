@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
-	top: 50px;
+  top: 50px;
   position: relative;
   margin-top: 25px;
 }
 
 .navbar-inverse {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .paginate-box {
@@ -24,18 +24,18 @@
 }
 
 .img-thumbnail {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .img-title {
   display: inline-block;
-	width: 120px;
-	text-align: center;
-	height: 20px;
+  width: 120px;
+  text-align: center;
+  height: 20px;
 	overflow: hidden;
-	padding-top: 5px;
-	padding: 0;
-	margin-toop: 10px;
+  padding-top: 5px;
+  padding: 0;
+  margin-toop: 10px;
 }
 
 .ellipsis {

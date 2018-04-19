@@ -1,23 +1,3 @@
-# require 'flickraw'
-
-# module Flickr
-# 	def self.search
-#     binding.pry
-  end
-	# class FlickRaw::Response
-	#   def url_q
-	#     build_img_url.gsub('?', 'q')
-	#   end
-
-	#   def url_c
-	#     build_img_url.gsub('?', 'c')
-	#   end
-
-	#   def build_img_url
-	#     "https://farm#{self.farm}.staticflickr.com/#{self.server}/#{self.id}_#{self.secret}_?.jpg"
-	#   end
-	# end
-# end
 require 'httparty'
 
 class Flickr

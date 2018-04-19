@@ -1,22 +1,27 @@
 <%= render 'header' %>
 
-<div class="container">
-  <h1 class="page-header">Search Flickr Photo</h1>
-  <br />
-  <% if flash[:error_msg] %>
-    <div class="alert alert-danger" role="alert"><%= flash.now[:error_msg] %></div>
-  <% end %>
-
-  <div class="row">
+<div class='container'>
+  <div class='row'>
+    <% unless @results %>
+      <div class='alert alert-warning'>
+        No results. Please use the <strong>search box</strong> above to get the relevant search results.
+      </div>
+    <% end %>
     <% @results.each do |photo, index| %>
-      <div class="gallery_photo col-lg-3 col-md-4 col-xs-6">
-        <img src="<%= @service.build_img_url(photo) %>" class="img-fluid img-thumbnail">
+      <div class='gallery_photo col-lg-3 col-md-4 col-xs-6'>
+        <div>
+          <img src='<%= @service.build_img_url(photo) %>' class='img-fluid img-thumbnail' alt="<%= photo['title']%>">
+          <div>
+            <p class='img-title'><%=photo['title']%></p>
+            <span class='ellipsis'>...</span>
+          </div>
+        </div>  
       </div>
     <% end if @results%>
   </div>
 
   <% if @results.present? && @results.any? %>
-    <div class="paginate-box">
+    <div class='paginate-box'>
       <%= will_paginate @results, renderer: BootstrapPagination::Rails %>
     </div>
   <% end %>

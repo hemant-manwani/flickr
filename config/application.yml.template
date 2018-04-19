@@ -1,0 +1,17 @@
+development:
+  flickr_api_key: placeholder_for_api_key
+  flickr_shared_secret: placeholder_for_api_secret
+  results_per_page: placeholder_for_per_page_results
+  flickr_base_url: placeholder_for_flicker_base_url
+
+test:
+  flickr_api_key: placeholder_for_api_key
+  flickr_shared_secret: placeholder_for_api_secret
+  results_per_page: placeholder_for_per_page_results
+  flickr_base_url: placeholder_for_flicker_base_url
+
+production:
+  flickr_api_key: placeholder_for_api_key
+  flickr_shared_secret: placeholder_for_api_secret
+  results_per_page: placeholder_for_per_page_results
+  flickr_base_url: placeholder_for_flicker_base_url
